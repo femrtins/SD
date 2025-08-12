@@ -1,0 +1,3 @@
+para rodar o server python3 ./server.py 5000 python3 ./ClientDir/client.py
+
+não pode ter arquivos nas pastas ./files
