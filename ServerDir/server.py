@@ -7,6 +7,7 @@ import json
 import uuid
 SERVER_DIR = "./files/"
 import sys
+import base64
 porta = sys.argv[1]
 
 
