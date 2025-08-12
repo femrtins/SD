@@ -158,11 +158,13 @@ with app.app_context():
                 json_object = json.load(openfile)
                 retorno = json_object[file_name]
 
-            openedFile = open(SERVER_DIR + retorno, "r")
+            openedFile = open(SERVER_DIR + retorno, "rb")
             conteudo = openedFile.read()
+            #conteudo_b64 = base64.b64decode(conteudo)
             openedFile.close()
 
-            resposta = jsonify({"header": "OK", "detail": conteudo, "UFID": retorno})
+            #resposta = jsonify({"header": "OK", "detail": conteudo, "UFID": retorno})
+            resposta = jsonify({"header": "OK", "detail": conteudo_b64, "UFID": retorno})
         except Exception as e:
             resposta = jsonify({"header": "erro", "detail": str(e)})
         return resposta
